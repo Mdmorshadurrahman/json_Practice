@@ -11,6 +11,7 @@ const get_details = () => {
 const show_details = (details) => {
     const imageDiv = document.getElementById('image');
     const infoDiv = document.getElementById('info');
+    imageDiv.style.backgroundColor = 'lightgray';
     imageDiv.innerHTML = `
     <img src='${details.strRender}'>
     `;
