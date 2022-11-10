@@ -21,21 +21,28 @@ body {
     color: gray;
     margin-bottom: 3%;
     height: 10vh;
-    width: 20%;
     background-color: whitesmoke;
+    width: 50%;
+}
+
+#input {
+    display: inline-flex;
+    gap: 3%;
+    width: 80%;
 }
 
 #input-firstname::placeholder,
 #input-lastname::placeholder {
-    padding-left: 0%;
-    font-size: medium;
+    padding-left: 5%;
+    font-size: larger;
 }
 
 #input-firstname:valid,
 #input-lastname:valid {
     color: blue;
     font-size: x-large;
-    padding-left: 10%;
+    /* padding-left: 10%;
+    padding-right: 10%; */
 }
 
 #details-section {
@@ -87,7 +94,7 @@ img {
     font-weight: bolder;
 }
 
-@media screen and (max-width:670px) {
+@media screen and (max-width:720px) {
 
     #details-section {
         flex-wrap: wrap;
@@ -105,9 +112,15 @@ img {
         align-content: center;
     }
 
+    #input {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
     #input-firstname:valid,
     #input-lastname:valid {
-        padding-left: 1%;
-        font-size: small;
+        font-size: large;
+        text-align: center;
     }
 }
