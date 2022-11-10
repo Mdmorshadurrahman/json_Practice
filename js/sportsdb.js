@@ -11,11 +11,15 @@ const get_details = () => {
 const show_details = (details) => {
     const imageDiv = document.getElementById('image');
     const infoDiv = document.getElementById('info');
-    imageDiv.style.backgroundColor = 'lightgray';
+    const detailsDiv = document.getElementById('details-section');
+    detailsDiv.style.bordercolor = 'black';
+    detailsDiv.style.borderWidth = '2px';
+    detailsDiv.style.borderStyle = 'solid';
+    imageDiv.style.backgroundColor = 'red';
     imageDiv.innerHTML = `
     <img src='${details.strRender}'>
     `;
-    infoDiv.style.backgroundColor = 'aqua';
+    infoDiv.style.backgroundColor = 'black';
     infoDiv.innerHTML = `
     <h1>${details.strPlayer}</h1>
     <h4>Position: ${details.strPosition}</h4>
@@ -25,4 +29,38 @@ const show_details = (details) => {
     <h4>Birth Location: ${details.strBirthLocation}</h4>
     <h4>Bio: ${details.strDescriptionEN.slice(0, 200)}</h4>
     `;
-} 
+}
+
+const modechange = () => {
+    const bodyDiv = document.getElementById('bodyid');
+    const modeDiv = document.getElementById('mode');
+    const hintDiv = document.getElementById('hint');
+    const btnDiv = document.getElementById('btn-submit');
+    const imageDiv = document.getElementById('image');
+    const infoDiv = document.getElementById('info');
+    const detailsDiv = document.getElementById('details-section');
+    if (modeDiv.innerText === 'Dark-Mode') {
+        bodyDiv.style.backgroundColor = 'black';
+        modeDiv.innerText = 'Light-Mode';
+        modeDiv.style.backgroundColor = 'white';
+        modeDiv.style.color = 'black';
+        hintDiv.style.color = 'white';
+        btnDiv.style.bordercolor = 'white';
+        imageDiv.style.backgroundColor = 'cyan';
+        infoDiv.style.backgroundColor = 'lightgray';
+        infoDiv.style.color = 'black';
+    }
+    else {
+        bodyDiv.style.backgroundColor = 'white';
+        modeDiv.innerText = 'Dark-Mode';
+        modeDiv.style.backgroundColor = 'black';
+        modeDiv.style.color = 'white';
+        hintDiv.style.color = 'gray';
+        btnDiv.style.bordercolor = 'black';
+        imageDiv.style.backgroundColor = 'red';
+        infoDiv.style.backgroundColor = 'black';
+        infoDiv.style.color = 'white';
+    }
+
+
+}

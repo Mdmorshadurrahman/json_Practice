@@ -9,16 +9,20 @@
     <link rel="stylesheet" href=".//sportsdb.css">
 </head>
 
-<body>
+<body id="bodyid">
     <header></header>
     <main>
         <section id="box-container">
             <input type="text" name="" placeholder="Enter the First name" id="input-firstname">
             <input type="text" name="" placeholder="Enter the Last name" id="input-lastname">
-            <button onclick="get_details()" id="btn-submit">get details</button>
-            <h1 style="color:gray;font-weight:lighter">write any player's name correctly and get to know more about him
+            <div id="btn">
+                <button onclick="get_details()" id="btn-submit">get details</button>
+            </div>
+            <button id="mode" onclick="modechange()">Dark-Mode</button>
+            <h1 style="color:gray;font-weight:lighter" id="hint">write any player's name <span
+                    style="font-weight:bolder;color:red">correctly</span> and get to know more about him
             </h1>
-            <div class="details-section">
+            <div id="details-section">
                 <div id="image">
                 </div>
                 <div id="info">
