@@ -6,20 +6,35 @@ const get_details = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => show_details(data.player[0]))
+
 }
 
 const show_details = (details) => {
+
     const imageDiv = document.getElementById('image');
     const infoDiv = document.getElementById('info');
     const detailsDiv = document.getElementById('details-section');
-    detailsDiv.style.bordercolor = 'black';
-    detailsDiv.style.borderWidth = '2px';
-    detailsDiv.style.borderStyle = 'solid';
-    imageDiv.style.backgroundColor = 'red';
+    const modeDiv = document.getElementById('mode');
+    if (modeDiv.innerText === "Light-Mode") {
+        detailsDiv.style.bordercolor = 'white';
+        detailsDiv.style.borderWidth = '2px';
+        detailsDiv.style.borderStyle = 'solid';
+        imageDiv.style.backgroundColor = 'cyan';
+        infoDiv.style.backgroundColor = 'lightgray';
+        infoDiv.style.color = 'black';
+    }
+    else {
+        detailsDiv.style.bordercolor = 'black';
+        detailsDiv.style.borderWidth = '2px';
+        detailsDiv.style.borderStyle = 'solid';
+        imageDiv.style.backgroundColor = 'red';
+        infoDiv.style.backgroundColor = 'black';
+        infoDiv.style.color = 'white';
+    }
     imageDiv.innerHTML = `
     <img src='${details.strRender}'>
     `;
-    infoDiv.style.backgroundColor = 'black';
+
     infoDiv.innerHTML = `
     <h1>${details.strPlayer}</h1>
     <h4>Position: ${details.strPosition}</h4>
