@@ -41,8 +41,7 @@ body {
 #input-lastname:valid {
     color: blue;
     font-size: x-large;
-    /* padding-left: 10%;
-    padding-right: 10%; */
+    padding-left: 5%;
 }
 
 #details-section {
