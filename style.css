@@ -7,11 +7,32 @@
     padding: 10px;
 }
 
-#commentDiv {
+#searchid {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 50%;
+    height: 3rem;
+    text-align: center;
+    border: 5px solid blue;
+    border-radius: 5px;
+}
+
+#searchid::placeholder {
+    border: 5px solid blue;
+    color: black;
+}
+
+#commentDiv,
+#cards {
     margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+}
+
+#cards img {
+    height: 10rem;
+    width: auto;
 }
 
 .eachdata {
