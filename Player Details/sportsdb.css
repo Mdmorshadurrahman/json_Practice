@@ -14,6 +14,16 @@ body {
     color: white;
     background-color: red;
     border: 2px solid black;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+#btn-save-submit {
+    font-size: medium;
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    border: 2px solid black;
 }
 
 #input-firstname,

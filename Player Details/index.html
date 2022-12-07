@@ -17,18 +17,25 @@
                 <input type="text" name="" placeholder="Enter the First name" id="input-firstname">
                 <input type="text" name="" placeholder="Enter the Last name" id="input-lastname">
             </div>
-            <div id="btn">
-                <button onclick="get_details()" id="btn-submit">get details</button>
+            <div id="btn-get" class="d-flex flex-row">
+                <button onclick="get_details()" id="btn-submit">Get details</button>
+                <button onclick="save_details()" id="btn-save-submit">Save details</button>
             </div>
             <button id="mode" onclick="modechange()">Dark-Mode</button>
             <h1 style="color:gray;font-weight:lighter" id="hint">write any player's name <span
                     style="font-weight:bolder;color:red">correctly</span> and get to know more about him (for example:
                 "Lionel" "Messi")
             </h1>
-            <div id="details-section">
-                <div id="image">
-                </div>
-                <div id="info">
+            <h2 style="color:gray;font-weight:lighter" id="hint2">You can save player card with "save player" button
+            </h2>
+            <div id="player-card">
+                <div id="all-section">
+                    <div id="details-section">
+                        <div id="image">
+                        </div>
+                        <div id="info">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -1,16 +1,22 @@
 const get_details = () => {
     const firstname = document.getElementById('input-firstname');
     const lastname = document.getElementById('input-lastname');
-    const url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${firstname.value}%20${lastname.value}`;
+    const url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${firstname.value ? firstname.value : 'nodata'}%20${lastname.value}`;
     console.log(url)
     fetch(url)
         .then(res => res.json())
         .then(data => show_details(data.player[0]))
 
 }
-
+const save_details = () => {
+    const playerCardDiv = document.getElementById('player-card');
+    const allSectionDiv = document.getElementById('all-section');
+    const eachSectionDiv = document.createElement('div');
+    eachSectionDiv.classList.add('eachSection');
+    eachSectionDiv.innerHTML = allSectionDiv.innerHTML;
+    playerCardDiv.appendChild(eachSectionDiv);
+}
 const show_details = (details) => {
-
     const imageDiv = document.getElementById('image');
     const infoDiv = document.getElementById('info');
     const detailsDiv = document.getElementById('details-section');
@@ -50,16 +56,17 @@ const modechange = () => {
     const bodyDiv = document.getElementById('bodyid');
     const modeDiv = document.getElementById('mode');
     const hintDiv = document.getElementById('hint');
+    const hint2Div = document.getElementById('hint2');
     const btnDiv = document.getElementById('btn-submit');
     const imageDiv = document.getElementById('image');
     const infoDiv = document.getElementById('info');
-    const detailsDiv = document.getElementById('details-section');
     if (modeDiv.innerText === 'Dark-Mode') {
         bodyDiv.style.backgroundColor = 'black';
         modeDiv.innerText = 'Light-Mode';
         modeDiv.style.backgroundColor = 'white';
         modeDiv.style.color = 'black';
         hintDiv.style.color = 'white';
+        hint2Div.style.color = 'white';
         btnDiv.style.bordercolor = 'white';
         imageDiv.style.backgroundColor = 'cyan';
         infoDiv.style.backgroundColor = 'lightgray';
@@ -71,6 +78,7 @@ const modechange = () => {
         modeDiv.style.backgroundColor = 'black';
         modeDiv.style.color = 'white';
         hintDiv.style.color = 'gray';
+        hint2Div.style.color = 'gray';
         btnDiv.style.bordercolor = 'black';
         imageDiv.style.backgroundColor = 'red';
         infoDiv.style.backgroundColor = 'black';
